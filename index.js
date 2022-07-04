@@ -16,6 +16,11 @@ const grp = [
     name:'gopichand',
     mail:'gopimawa@mail',
     number:'7531598254'
+    },
+    {img :'https://usercontent2.hubstatic.com/13901601_f520.jpg',
+    name:'hollywdstar',
+    mail:'hollywood@mail',
+    number:'4578952412'
     }
 ];
 
