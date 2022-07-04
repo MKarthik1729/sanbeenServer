@@ -1,5 +1,5 @@
 const express = require ('express');
-
+const PORT = process.env.PORT || 4000
 const app = express();
 const grp = [
     {img :'https://usercontent2.hubstatic.com/13901601_f520.jpg',
@@ -19,11 +19,13 @@ const grp = [
     }
 ];
 
-
 app.get('/',(req,res)=>{
+res.send('Hello World !!!')
+});
+app.get('/data/',(req,res)=>{
     console.log('Hello World')
     res.json(grp)
 });
 
-app.listen(4000)
+app.listen(PORT)
 
