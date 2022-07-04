@@ -1,5 +1,10 @@
 const express = require ('express');
 const PORT = process.env.PORT || 4000
+
+const view = require('./src/Prop.json')
+const views = require('./src/viewed.json')
+
+
 const app = express();
 const grp = [
     {img :'https://usercontent2.hubstatic.com/13901601_f520.jpg',
@@ -24,13 +29,29 @@ const grp = [
     }
 ];
 
+function trail() {
+    // console.log(views);
+    var kk = []
+    // console.log(kk)
+    view.map((items)=>{
+        if(items.id == views.id){
+            kk = [...kk,items]
+        }
+    });
+    return kk;
+}
+trail();
 app.get('/',(req,res)=>{
-res.send('Hello World !!!')
+res.send(view)
 });
 app.get('/data/',(req,res)=>{
     console.log('Hello World')
-    res.json(grp)
+    res.json(grp);
 });
 
-app.listen(PORT)
+app.get('/view/',(req,res)=>{
+    res.json(view)
+})
+
+app.listen(PORT);
 
